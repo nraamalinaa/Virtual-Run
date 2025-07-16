@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Run For Hope - Charity Virtual Run 2025</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap');
+
+    body {
+      margin: 0;
+      background-color: #216241;
+      color: #FCFCEC;
+      font-family: 'Fjalla One', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .left-btn, header .right-btn {
+      background-color: #FCFCEC;
+      color: #216241;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 30px;
+      box-shadow: 2px 2px 0px 0px #000000cc;
+      cursor: pointer;
+      border: none;
+      font-size: 1.1rem;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+    }
+    header .left-btn:hover, header .right-btn:hover {
+      background-color: #c3d7ab;
+      color: #1d4b32;
+    }
+    header .year {
+      font-weight: 700;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    main h1.big-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 9.5rem;
+      line-height: 1;
+      color: #FCFCEC;
+      text-shadow:
+        4px 4px 0 #000000cc,
+        7px 7px 0 #000000cc;
+      margin: 0 0 40px 0;
+      user-select: none;
+      position: relative;
+      z-index: 1;
+    }
+    main .charity-virtual-run-highlight {
+      position: relative;
+      display: inline-block;
+      background: #aabd84;
+      padding: 12px 80px;
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 3.5rem;
+      color: #FCFCEC;
+      text-shadow:
+        2px 2px 0 #000000cc;
+      font-weight: 700;
+      text-transform: uppercase;
+      user-select: none;
+      box-shadow: 3px 3px 0px 0px #000000cc;
+      margin-top: -110px;
+      margin-bottom: 60px;
+      z-index: 2;
+    }
+    /* Countdown Styles */
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    /* Info Card Styles */
+    .info-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      color: #216241;
+    }
+    .info-card h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    .info-card p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .half {
+      flex: 1;
+      border-right: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #216241;
+    }
+    .half:last-child {
+      border-right: none;
+    }
+    .time-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #FCFCEC;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .time-box h2 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .time-box p {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    /* Greenfuel run 2025 pill */
+    .greenfuel-pill {
+      background-color: #FCFCEC;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #216241;
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      padding: 10px 24px;
+      gap: 30px;
+      box-shadow: 2px 2px 0 #000000cc;
+      margin: auto;
+      user-select: none;
+      max-width: 390px;
+      cursor: default;
+      user-select: none;
+    }
+    .greenfuel-pill img {
+      width: 40px;
+      height: 40px;
+      background: #aabd84;
+      border-radius: 50%;
+      box-shadow: 1px 1px 0 #000000aa;
+      object-fit: contain;
+      user-select: none;
+    }
+
+    nav {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      font-weight: 700;
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1.15rem;
+      user-select: none;
+    }
+    nav a {
+      color: #FCFCEC;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #aabd84;
+    }
+
+    footer {
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #f9b846;
+      user-select: none;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      border-top: 1px solid #aabd8411;
+      padding-top: 25px;
+    }
+    footer .separator {
+      color: #f9b846;
+      user-select: none;
+      font-weight: 900;
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: 0 12px;
+    }
+
+    /* Separate Card Styles */
+      .separate-card {
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        max-width: 800px;
+       margin: 20px auto;
+        padding: 30px;
+        color: #216241;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      main h1.big-title {
+        font-size: 5.5rem;
+        margin-bottom: 30px;
+      }
+      main .charity-run-highlight {
+        font-size: 2.5rem;
+        margin-top: -70px;
+        padding: 10px 40px;
+        margin-bottom: 50px;
+      }
+      .greenfuel-pill {
+        max-width: 320px;
+        font-size: 1.3rem;
+        gap: 18px;
+      }
+      footer {
+        font-size: 1rem;
+      }
+      header {
+        padding: 10px 20px;
+      }
+      header .left-btn, header .right-btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+      }
+      nav {
+        gap: 30px;
+        font-size: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 400px) {
+      main h1.big-title {
+        font-size: 3.8rem;
+        margin-bottom: 24px;
+      }
+      main .charity-run-highlight {
+        font-size: 2rem;
+        margin-top: -60px;
+        padding: 8px 24px;
+        margin-bottom: 40px;
+      }
+      .greenfuel-pill {
+        max-width: 260px;
+        font-size: 1.1rem;
+        gap: 12px;
+        padding: 8px 20px;
+      }
+      footer {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 12px;
+      }
+      footer .separator {
+        display: none;
+      }
+      nav {
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header role="banner" aria-label="Top navigation bar with year and links">
+    <a href="#" class="left-btn" aria-label="Link to Charity Run main page">🏃Virtual Run</a>
+    <div class="year" aria-live="polite" aria-atomic="true">2025</div>
+    <a href="#" class="right-btn" aria-label="Link to Homepage">Homepage</a>
+  </header>
+
+  <main role="main" aria-labelledby="main-title">
+    <h1 class="big-title" id="main-title">RUN FOR HOPE</h1>
+    <div class="charity-virtual-run-highlight" aria-label="Charity virtual run event title highlight">CHARITY VIRTUAL RUN</div>
+<br>
+    <div class="greenfuel-pill" aria-label="Greenfuel Run 2027">
+      GREENFUEL RUN 2025
+    </div>
+
+    <nav role="navigation" aria-label="Main navigation links">
+      <a href="index.html" tabindex="0" aria-label="Homepage link">HOME</a>
+      <a href="products copy.html" tabindex="0" aria-label="Product and Services page link">PRODUCT & SERVICES</a>
+      <a href="contact us website.html" tabindex="0" aria-label="Contact Us page link">CONTACT US</a>
+      <a href="media and resources website.html" tabindex="0" aria-label="Media and Resources page link">MEDIA & RESOURCES</a>
+    </nav>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+      <div class="time-box">
+        <h2 id="days">00</h2>
+        <p>Days</p>
+      </div>
+      <div class="time-box">
+        <h2 id="hours">00</h2>
+        <p>Hours</p>
+      </div>
+      <div class="time-box">
+        <h2 id="minutes">00</h2>
+        <p>Minutes</p>
+      </div>
+      <div class="time-box">
+        <h2 id="seconds">00</h2>
+        <p>Seconds</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h2>Why Join Us?</h2>
+      <p>Step into purpose with Greefuel Run 2025, a virtual charity event where every stride fuels hope. Whether you're walking in your neighborhood or running on a treadmill, your participation helps raise funds for orphanages, elderly care centers, and support for the asnaf and the poor and needy. Together, we can make a meaningful impact in the lives of those who need it most. Sign up today and let your miles carry purpose.</p>
+    </div>
+ 
+    <div class="info-card">
+      <h2>Event Details</h2>
+      <p>Event Name: Greenfuel Run 2025<br>Deadline Registration: 31 August 2025<br>Event Duration: 18 Sept - 18 Oct 2025<br>Location: Anywhere</p>
+    </div>
+
+  <main>
+    <h2>What Our Participants Say:</h2>
+    <div class="testimonial-container">
+       <div class="testimonial active">
+         <p>"Joining Greefuel Run was meaningful. I ran 5KM and felt proud knowing that it helped others!"</p>
+         <span>— Aiman, 2024 Participant</span>
+      </div>
+
+      <div class="testimonial">
+         <p>"Running for a cause made me feel connected to the community."</p>
+         <span>— Aliyah, 2024 Participant</span>
+      </div>
+
+      <div class="testimonial">
+         <p>"Every step in Greefuel Run helped someone in need. It was meaningful and easy to join."</p>
+         <span>— Fatin, 2024 Participant</span>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo" aria-label="Footer contact information">
+    <span>www.greenfuelrun.my</span>
+    <span class="separator" aria-hidden="true">|</span>
+    <span>hello@greenfuelrun.my</span>
+  </footer>
+
+  <script>
+       document.addEventListener('DOMContentLoaded', function() 
+      {
+      // Set the date we're counting down to (August 31, 2025)
+      const countDownDate = new Date("August 31, 2025 00:00:00").getTime();
+      
+      // Elements
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
+      
+      // Update the countdown every 1 second
+      const countdown = setInterval(function() {
+          // Get today's date and time
+          const now = new Date().getTime();
+          
+          // Find the distance between now and the countdown date
+          const distance = countDownDate - now;
+          
+          // If the countdown is finished
+          if (distance < 0) {
+              clearInterval(countdown);
+              daysElement.textContent = "00";
+              hoursElement.textContent = "00";
+              minutesElement.textContent = "00";
+              secondsElement.textContent = "00";
+              return;
+          }
+          
+          // Time calculations for days, hours, minutes and seconds
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          // Output the result
+          daysElement.textContent = formatNumber(days);
+          hoursElement.textContent = formatNumber(hours);
+          minutesElement.textContent = formatNumber(minutes);
+          secondsElement.textContent = formatNumber(seconds);
+      }, 1000);
+      
+      function formatNumber(num) {
+          return num < 10 ? `0${num}` : num;
+      }
+    });
+  </script>
+</body>
+</html>

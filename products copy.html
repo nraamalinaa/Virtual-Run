@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product & Services - GreenFuel Run 2025</title>
+  <link rel="icon" href="ticket.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #216241;
+      color: #FCFCEC;
+      font-family: 'Fjalla One', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header {
+      width: 100%;
+      max-width: 1200px;
+      padding: 10px 40px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .left-btn, header .right-btn {
+      background-color: #FCFCEC;
+      color: #216241;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 30px;
+      box-shadow: 2px 2px 0px 0px #000000cc;
+      cursor: pointer;
+      border: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+    }
+
+    header .left-btn:hover, header .right-btn:hover {
+      background-color: #c3d7ab;
+      color: #1d4b32;
+    }
+
+    header .year {
+      font-weight: 700;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+     main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    main h1.big-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 5.5rem;
+      line-height: 1;
+      color: #FCFCEC;
+      text-shadow: 4px 4px 0 #000000cc, 7px 7px 0 #000000cc;
+      margin: 0 0 40px 0;
+      user-select: none;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    nav {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    nav a {
+      color: #FCFCEC;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #aabd84;
+    }
+
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      color: #215c44;
+      width: 350px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .card h3 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      text-align: justify;
+    }
+
+    .card a {
+      display: block;
+      width: fit-content;
+      margin: 10px auto 0;
+      padding: 10px 20px;
+      background-color: #215c44;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      text-decoration: none;
+      text-align: center;
+      animation: pulse 1.2s infinite, glow 2s ease-in-out infinite alternate;
+      box-shadow: 0 0 5px #fff, 0 0 10px #f6d365, 0 0 15px #f6d365;
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .image-gallery img {
+      width: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 0 0 8px #f6d365;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f6d365, 0 0 25px #f6d365;
+    }
+
+    .footer-contact {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: auto;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 1.1rem;
+      color: #f9b846;
+      border-top: 1px solid #aabd8411;
+      padding-top: 25px;
+    }
+
+    .large-image {
+      width: 220px;
+    }
+
+    .t-shirt-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .row-top {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .row-bottom img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Optional: Gaya asal gambar */
+    .t-shirt-layout img {
+      width: 132px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 0 0 8px #f6d365;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .t-shirt-layout img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f6d365, 0 0 25px #f6d365;
+    }
+
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #fff, 0 0 10px #f6d365, 0 0 15px #f6d365; }
+      100% { box-shadow: 0 0 20px #fff, 0 0 30px #f6d365, 0 0 40px #f6d365; }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 3rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="left-btn">🏃Virtual Run</a>
+    <div class="year">2025</div>
+    <a href="index.html" class="right-btn">Homepage</a>
+  </header>
+
+  <main>
+    <iframe src="audio.html" allow="autoplay" style="display:none"></iframe>
+    <h1 class="big-title">Products & Services</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products copy.html">Product & Services</a>
+    <a href="contact us website.html">Contact Us</a>
+    <a href="media and resources website.html">Media & Resources</a>
+  </nav>
+
+  <section class="product-section">
+    <div class="card">
+      <h3>👕 Running T-Shirt Design</h3>
+      <div class="image-gallery t-shirt-layout">
+  <div class="row-top">
+    <img src="WhatsApp Image 2025-07-10 at 23.28.23_4f8ec01f.jpg" alt="Shirt 1" />
+    <img src="WhatsApp Image 2025-07-10 at 23.28.24_a2e0fc20.jpg" alt="Shirt 2" />
+  </div>
+  <div class="row-bottom">
+    <img src="WhatsApp Image 2025-07-10 at 23.28.24_97febf7f.jpg" alt="Shirt 3" />
+  </div>
+  </div>
+      <p>Our high-quality, breathable event t-shirts are available in all sizes. They are included with registration or can be purchased separately.</p>
+    </div>
+
+    <div class="card">
+      <h3>🏅 Medal & E-Certificate</h3>
+      <br>
+     <div class="image-gallery">
+        <img src="Orange and Purple Marathon Event Certificate.png" alt="Medal Image" 
+        style="width: 95%; margin: 0 auto; display: block; border: 2px solid black; border-radius: 10px; box-shadow: 0 0 8px #f6d365;" />
+      </div>
+      <br>
+      <p>Each finisher will receive an exclusive event medal and a personalized e-certificate. Both are specially crafted to commemorate your GreenFuel Run 2025 achievement.</p>
+    </div>
+
+    <div class="card">
+  <h3 style="text-align: center;">🏃 Registration Packages</h3>
+
+  <p>
+    Each distance category comes with exclusive runner’s perks for all participants.
+  </p>
+
+  <!-- Mini Package Boxes -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px;">
+
+    <!-- 5KM -->
+    <div style="background-color: #e0f2e9; color: #215c44; padding: 15px 20px; border-radius: 12px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); text-align: center; width: 170px;">
+      🟢 <strong>5KM Fun Run</strong><br>
+      <span style="font-size: 1.1em; font-weight: bold;">RM 30</span>
+    </div>
+
+    <!-- 10KM -->
+    <div style="background-color: #d8eafc; color: #215c44; padding: 15px 20px; border-radius: 12px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); text-align: center; width: 170px;">
+      🔵 <strong>10KM Challenge</strong><br>
+      <span style="font-size: 1.1em; font-weight: bold;">RM 40</span>
+    </div>
+
+    <!-- 42KM -->
+    <div style="background-color: #fcdede; color: #215c44; padding: 15px 20px; border-radius: 12px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); text-align: center; width: 170px;">
+      🔴 <strong>42KM Marathon</strong><br>
+      <span style="font-size: 1.1em; font-weight: bold;">RM 60</span>
+    </div>
+  </div>
+
+  <!-- What's Included -->
+<div style="text-align: center; margin-top: 25px;">
+  <p style="margin: 5px 0;"><strong>Each package includes:</strong></p>
+
+  <!-- CENTERED LINE HERE -->
+  <p style="margin: 5px 0; text-align: center;">
+    🎽 T-shirt  🎖 Medal  📜 E-Certificate
+  </p>
+</div>
+
+  <!-- Register Button -->
+  <div style="display: flex; justify-content: center; margin-top: 15px;">
+    <a href="https://forms.gle/E4HkHe7sXvrEKscW8" target="_blank"
+       style="padding: 10px 20px; background-color: #215c44; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 1em; box-shadow: 0 0 6px #fff, 0 0 12px #f6d365;">
+      ‼️‼️ REGISTER NOW ‼️‼️
+    </a>
+  </div>
+</div>
+
+    <div class="card">
+  <h3>💬 Motivational Support</h3>
+    <p>Scan the QR code below to read or write inspiring messages for other participants. Let’s lift each other up!</p>
+      
+    <img src="qr_code.png" alt="Motivational Wall QR Code"
+       style="width: 270px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 0 8px #f6d365; border: 2px solid black;" />
+      <br>
+       <p style="text-align: center; font-style: italic;">“Every word you share may be the spark someone needs”</p>
+    </div>
+
+    <div class="card">
+  <h3>📸 Submit Your Run Proof</h3>
+  <p>After your run, submit a photo or screenshot from apps like Strava, NRC, or Garmin.</p>
+
+  <p>We’ll verify it and process your medal and e-certificate.</p>
+  <div style="text-align: center; margin-top: 15px;">
+    <a href="https://forms.gle/RBkuVTQRA8jZP4SE7" target="_blank"
+       style="padding: 10px 20px; background-color: #215c44; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 0 5px #fff, 0 0 10px #f6d365;">
+       📤 SUBMIT YOUR PROOF
+
+       
+    </a>
+  </div>
+</div>
+
+  </section>
+
+  <footer class="footer-contact">
+    <span>www.greenfuelrun.my</span>
+    <span>|</span>
+    <span>hello@greenfuelrun.my</span>
+ 
+    </main>
+ 
+  </footer>
+</body>
+</html>
